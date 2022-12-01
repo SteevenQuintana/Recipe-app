@@ -1,13 +1,46 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap");
+
+@font-face {
+  font-family: MonsterClubhouse;
+  src: url("./assets/fonts/MonsterClubhouse.ttf");
+}
+
+:root {
+  /* colors */
+  --color1: #425966;
+  --color2: #d84a4a;
+  --color3: #ffffff;
+
+  /* backgrounds */
+  --bg-tarjet: transparent linear-gradient(180deg, #e9f1fa 0%, #ffffff 100%) 0%
+    0% no-repeat padding-box;
+  --bg-tarjet-hover: transparent
+    linear-gradient(180deg, #e9f1fa 0%, #ffffff 100%) 0% 0% no-repeat
+    padding-box;
+  --bg-footer: transparent linear-gradient(180deg, #c2e3f3 0%, #6aa3c1 100%) 0%
+    0% no-repeat padding-box;
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  font-weight: 400;
+  color: var(--color1);
+}
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.text-monster {
+  font-family: MonsterClubhouse;
 }

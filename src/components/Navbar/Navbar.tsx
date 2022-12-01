@@ -1,0 +1,55 @@
+import React from "react";
+import { Link, Route, Routes } from "react-router-dom";
+import Recipes from "../../container/Recipes/Recipes";
+import { menuItems } from "../../helpers/menuItems";
+import { Logo } from "./Logo";
+import "./styles/Navbar.scss";
+export interface NavbarInterface {}
+
+const Navbar: React.FC<NavbarInterface> = () => {
+  return (
+    <>
+      <nav className="navbar">
+        <div className="navbar__container">
+          <Link className="navbar__logo" to="/">
+            <Logo />
+          </Link>
+          <div className={"navbar__menu-desktop"}>
+            {menuItems.map((item, index) => (
+              <Link
+                key={`mobile-${index}`}
+                className="navbar-link-desktop"
+                to={item.url}
+              >
+                <h3>{item.title}</h3>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className={"navbar__menu-mobile"}>
+          {menuItems.map((item, index) => (
+            <Link key={`mobile-${index}`} className={item.cName} to={item.url}>
+              <img src={item.icon} alt={item.title} />
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Recipes query="" />} />
+        <Route path="/vegetarianos" element={<Recipes query="vegetarian" />} />
+        <Route
+          path="/platos-principales"
+          element={<Recipes query="main course" />}
+        />
+        <Route path="/Tortas" element={<Recipes query="dessert" />} />
+        <Route path="/comida-rapida" element={<Recipes query="fingerfood" />} />
+        <Route path="/menu-ninos" element={<Recipes query="snack" />} />
+        <Route path="/sopas" element={<Recipes query="soup" />} />
+      </Routes>
+    </>
+  );
+};
+
+export default Navbar;
