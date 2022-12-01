@@ -10,6 +10,7 @@ export const menuItems = [
   {
     title: "Home",
     titleMobile: "Home",
+    active: true,
     url: "/",
     query: "",
     icon: home,
@@ -18,6 +19,7 @@ export const menuItems = [
   {
     title: "Vegetarianos",
     titleMobile: "Vegetarianos",
+    active: false,
     url: "/vegetarianos",
     query: "vegetarian",
     icon: vegetarian,
@@ -26,6 +28,7 @@ export const menuItems = [
   {
     title: "Platos principales",
     titleMobile: "principales",
+    active: false,
     url: "/platos-principales",
     query: "main course",
     icon: main,
@@ -34,6 +37,7 @@ export const menuItems = [
   {
     title: "Tortas",
     titleMobile: "Tortas",
+    active: false,
     url: "/tortas",
     query: "dessert",
     icon: cake,
@@ -42,6 +46,7 @@ export const menuItems = [
   {
     title: "Comida Rápida",
     titleMobile: "Rápida",
+    active: false,
     url: "/comida-rapida",
     query: "fingerfood",
     icon: fastFood,
@@ -50,6 +55,7 @@ export const menuItems = [
   {
     title: "Menú Niños",
     titleMobile: "Menú Niños",
+    active: false,
     url: "/menu-ninos",
     query: "snack",
     icon: kids,
@@ -58,6 +64,7 @@ export const menuItems = [
   {
     title: "Sopas",
     titleMobile: "Sopas",
+    active: false,
     url: "/sopas",
     query: "soup",
     icon: soup,
