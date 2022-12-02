@@ -1,10 +1,9 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import Recipes from "../../container/Recipes/Recipes";
+import { Recipes } from "../../container";
 import { menuItems } from "../../helpers/menuItems";
-import { Banner } from "./Banner";
-import { Logo } from "./Logo";
-import "./styles/Navbar.scss";
+import { Banner, Logo } from "../../components";
+import "./Navbar.scss";
 
 const Navbar: React.FC = () => {
   return (

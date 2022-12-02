@@ -1,5 +1,4 @@
-import { Footer } from "./container/Footer";
-import Header from "./container/Header/Header";
+import { Footer, Header } from "./container";
 
 function App() {
   return (

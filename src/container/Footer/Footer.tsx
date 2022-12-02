@@ -1,4 +1,4 @@
-import "./styles/Footer.scss";
+import "./Footer.scss";
 import productsImg from "../../assets/productImg.png";
 
 const Footer: React.FC = () => {
