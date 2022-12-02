@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Recipe } from "../../interfaces/recipe";
+import getRecipes from "../../services/recipe.service";
 
 interface query {
   query: string;
@@ -7,12 +8,14 @@ interface query {
 
 function Recipes({ query }: query) {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+
   useEffect(() => {
-    // const baseUrl = `${process.env.REACT_APP_URL}recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=4&tags=${query}&sort=popularity`;
-    // fetch(baseUrl)
-    //   .then((response) => response.json())
-    //   .then((data) => setRecipes(data.recipes));
+    console.log(query);
+    (async () => {
+      setRecipes(await getRecipes("vegetarian"));
+    })();
   }, []);
+
   return (
     <>
       <ul>
