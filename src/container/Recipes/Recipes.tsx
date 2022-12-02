@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
 import { Recipe } from "../../interfaces/recipe";
 import getRecipes from "../../services/recipe.service";
+import { useSelector, useDispatch } from "react-redux";
 
-interface query {
-  query: string;
-}
-
-function Recipes({ query }: query) {
+function Recipes() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const recipe = useSelector((state: any) => state.recipe.value);
 
   useEffect(() => {
-    console.log(query);
     (async () => {
-      setRecipes(await getRecipes("vegetarian"));
+      setRecipes(await getRecipes(recipe));
     })();
-  }, []);
+  }, [recipe]);
 
   return (
     <>

@@ -4,8 +4,12 @@ import { Recipes } from "../../container";
 import { menuItems } from "../../helpers/menuItems";
 import { Banner, Logo } from "../../components";
 import "./Navbar.scss";
+import { setQuery } from "../../features/recipeSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar: React.FC = () => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <nav className="navbar">
@@ -19,6 +23,9 @@ const Navbar: React.FC = () => {
                 key={`mobile-${index}`}
                 className={`navbar-link-desktop ${item.active && "active"}`}
                 to={item.url}
+                onClick={() => {
+                  dispatch(setQuery(item.query));
+                }}
               >
                 <h3 className="navbar-title">{item.title}</h3>
               </Link>
@@ -30,7 +37,14 @@ const Navbar: React.FC = () => {
 
         <div className={"navbar__menu-mobile"}>
           {menuItems.map((item, index) => (
-            <Link key={`mobile-${index}`} className={item.cName} to={item.url}>
+            <Link
+              key={`mobile-${index}`}
+              className={item.cName}
+              to={item.url}
+              onClick={() => {
+                dispatch(setQuery(item.query));
+              }}
+            >
               <img className="link-img" src={item.icon} alt={item.title} />
               <h3 className="title">{item.titleMobile}</h3>
             </Link>
@@ -39,16 +53,13 @@ const Navbar: React.FC = () => {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Recipes query="" />} />
-        <Route path="/vegetarianos" element={<Recipes query="vegetarian" />} />
-        <Route
-          path="/platos-principales"
-          element={<Recipes query="main course" />}
-        />
-        <Route path="/Tortas" element={<Recipes query="dessert" />} />
-        <Route path="/comida-rapida" element={<Recipes query="fingerfood" />} />
-        <Route path="/menu-ninos" element={<Recipes query="snack" />} />
-        <Route path="/sopas" element={<Recipes query="soup" />} />
+        <Route path="/" element={<Recipes />} />
+        <Route path="/vegetarianos" element={<Recipes />} />
+        <Route path="/platos-principales" element={<Recipes />} />
+        <Route path="/Tortas" element={<Recipes />} />
+        <Route path="/comida-rapida" element={<Recipes />} />
+        <Route path="/menu-ninos" element={<Recipes />} />
+        <Route path="/sopas" element={<Recipes />} />
       </Routes>
     </>
   );
