@@ -4,12 +4,13 @@
   background-size: cover;
   background-position: top;
   position: relative;
+  overflow: hidden;
   &__text {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 65.67px;
-    left: 56.5px;
+    left: 13.2vw;
     .banner-title,
     .banner-subtitle {
       color: var(--color3);
@@ -19,11 +20,12 @@
       margin-top: -35px;
     }
   }
-  @media screen and (min-width: 428px) {
+
+  @media screen and (min-width: 429px) {
     height: 249px;
     &__text {
       top: 50.67px;
-      left: 121.55px;
+      left: 15.8vw;
     }
     .banner-title {
       font-size: 74px;
@@ -33,11 +35,12 @@
       margin-top: -48px;
     }
   }
+
   @media screen and (min-width: 769px) {
     height: 416px;
     &__text {
       top: 134px;
-      left: 261px;
+      left: 20.4vw;
     }
     .banner-subtitle {
       margin-top: -48px;

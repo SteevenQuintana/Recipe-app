@@ -1,11 +1,13 @@
+import { Footer } from "./container/Footer";
 import Header from "./container/Header/Header";
-// import getRecipes from "./services/recipe.service";
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
-    </div>
+      <div style={{ height: "10vh" }}></div>
+      <Footer />
+    </>
   );
 }
 

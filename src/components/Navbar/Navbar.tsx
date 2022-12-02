@@ -5,9 +5,8 @@ import { menuItems } from "../../helpers/menuItems";
 import { Banner } from "./Banner";
 import { Logo } from "./Logo";
 import "./styles/Navbar.scss";
-export interface NavbarInterface {}
 
-const Navbar: React.FC<NavbarInterface> = () => {
+const Navbar: React.FC = () => {
   return (
     <>
       <nav className="navbar">
