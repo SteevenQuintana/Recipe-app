@@ -3,12 +3,16 @@ import { Link, Route, Routes } from "react-router-dom";
 import { Recipes } from "../../container";
 import { menuItems } from "../../helpers/menuItems";
 import { Banner, Logo } from "../../components";
-import "./Navbar.scss";
 import { setQuery } from "../../features/recipeSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch } from "../../app/hooks";
+import "./Navbar.scss";
 
 const Navbar: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+
+  const handleRecipe = (query: string) => {
+    dispatch(setQuery(query));
+  };
 
   return (
     <>
@@ -23,9 +27,7 @@ const Navbar: React.FC = () => {
                 key={`mobile-${index}`}
                 className={`navbar-link-desktop ${item.active && "active"}`}
                 to={item.url}
-                onClick={() => {
-                  dispatch(setQuery(item.query));
-                }}
+                onClick={() => handleRecipe(item.query)}
               >
                 <h3 className="navbar-title">{item.title}</h3>
               </Link>
@@ -41,9 +43,7 @@ const Navbar: React.FC = () => {
               key={`mobile-${index}`}
               className={item.cName}
               to={item.url}
-              onClick={() => {
-                dispatch(setQuery(item.query));
-              }}
+              onClick={() => handleRecipe(item.query)}
             >
               <img className="link-img" src={item.icon} alt={item.title} />
               <h3 className="title">{item.titleMobile}</h3>

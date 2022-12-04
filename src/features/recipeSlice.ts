@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export const recipeSlice = createSlice({
   name: "recipe",
@@ -6,8 +6,7 @@ export const recipeSlice = createSlice({
     value: "",
   },
   reducers: {
-    setQuery: (state, action) => {
-      console.log(action.payload);
+    setQuery: (state, action: PayloadAction<string>) => {
       state.value = action.payload;
     },
   },

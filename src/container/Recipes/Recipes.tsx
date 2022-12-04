@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Recipe } from "../../interfaces/recipe";
 import getRecipes from "../../services/recipe.service";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppSelector } from "../../app/hooks";
 
 function Recipes() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const recipe = useSelector((state: any) => state.recipe.value);
+  const recipe = useAppSelector((state) => state.recipe.value);
 
   useEffect(() => {
     (async () => {
