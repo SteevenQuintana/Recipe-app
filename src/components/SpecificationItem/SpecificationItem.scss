@@ -1,0 +1,16 @@
+.specification {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8px;
+  &__img {
+    height: 17px;
+  }
+  &__title {
+    font-size: 17px;
+    color: var(--color2);
+  }
+  &__subtitle {
+    font-size: 15px;
+  }
+}

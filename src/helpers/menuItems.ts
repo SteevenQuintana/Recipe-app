@@ -5,7 +5,7 @@ import cake from "../assets/icons/ic_cake.svg";
 import fastFood from "../assets/icons/ic_fast-food.svg";
 import kids from "../assets/icons/ic_kids.svg";
 import soup from "../assets/icons/ic_soup.svg";
-import { MenuItem } from "../interfaces/menu";
+import { MenuItem } from "../interfaces/app";
 
 export const menuItems: MenuItem[] = [
   {

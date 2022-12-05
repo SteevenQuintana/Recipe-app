@@ -8,3 +8,11 @@ export interface MenuItem {
   icon: string;
   cName: string;
 }
+export interface DescriptionInterface {
+  title: string;
+}
+export interface specificationInterface {
+  servings: number;
+  minutes: number;
+  ingredients: number;
+}

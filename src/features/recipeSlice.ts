@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { menuItems } from "../helpers/menuItems";
-import { MenuItem } from "../interfaces/menu";
+import { MenuItem } from "../interfaces/app";
 
 export const recipeSlice = createSlice({
   name: "recipe",
