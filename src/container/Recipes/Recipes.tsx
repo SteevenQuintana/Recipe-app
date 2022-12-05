@@ -4,33 +4,30 @@ import getRecipes from "../../services/recipe.service";
 import { useAppSelector } from "../../app/hooks";
 import star from "../../assets/icons/ic_star.svg";
 import like from "../../assets/icons/ic-favorite.svg";
-import ojingeo from "../../assets/images/Ojingeo-muchim-5.png";
 import { UIhelper } from "../../helpers/UI";
 import portion from "../../assets/icons/portion.svg";
 import time from "../../assets/icons/time.svg";
-import dificulty from "../../assets/icons/chef.svg";
+import difficulty from "../../assets/icons/chef.svg";
 import "./Recipes.scss";
+import { recipes } from "../../helpers/recipe";
 
 function Recipes() {
   // const [recipes, setRecipes] = useState<Recipe[]>([]);
-  // const recipe = useAppSelector((state) => state.recipe.value);
+  // const menus = useAppSelector((state) => state.recipe);
+  // const index = menus.findIndex((recipe) => recipe.active === true);
+  // const query = menus[index].query;
 
   // useEffect(() => {
   //   (async () => {
-  //     setRecipes(await getRecipes(recipe));
+  //     setRecipes(await getRecipes(query));
   //   })();
-  // }, [recipe]);
-
-  const recipes = [
-    { id: "1", image: ojingeo, title: "nuevo plato", servings: "10" },
-    { id: "2", image: ojingeo, title: "nuevo plato", servings: "10" },
-    { id: "3", image: ojingeo, title: "nuevo plato", servings: "10" },
-    { id: "4", image: ojingeo, title: "nuevo plato", servings: "10" },
-  ];
+  // }, [menus]);
 
   return (
     <div className="recipe">
-      <h2 className="recipe__title text-monster">Nuevas Recetas</h2>
+      <h2 className="recipe__title text-monster">
+        {/* {UIhelper.recipeName(menus[index].title)} */}
+      </h2>
       <ul className="recipe__list">
         {recipes.map((recipe: any) => (
           <li key={recipe.id}>
@@ -49,7 +46,7 @@ function Recipes() {
                   <div className="item-qualification">
                     <div className="item-qualification__star">
                       <img src={star} alt="qualification" />
-                      <span>5.0</span>
+                      <span>{UIhelper.recipeRating()}</span>
                     </div>
                     <img
                       className="item-qualification__like"
@@ -83,19 +80,23 @@ function Recipes() {
                       Tiempo de preparación
                     </h4>
                     <h5 className="specification__subtitle">
-                      {recipe.servings * 4} minutos
+                      {UIhelper.recipeReady(recipe.readyInMinutes)}
                     </h5>
                   </div>
                   <div className="specification">
                     <img
                       className="specification__img"
-                      src={dificulty}
+                      src={difficulty}
                       alt="preparation dificulty"
                     />
                     <h4 className="specification__title text-monster">
                       Dificultad
                     </h4>
-                    <h5 className="specification__subtitle">fácil</h5>
+                    <h5 className="specification__subtitle">
+                      {UIhelper.recipeDifficulty(
+                        recipe.extendedIngredients.length
+                      )}
+                    </h5>
                   </div>
                 </section>
               </div>

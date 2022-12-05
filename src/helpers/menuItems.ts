@@ -5,9 +5,11 @@ import cake from "../assets/icons/ic_cake.svg";
 import fastFood from "../assets/icons/ic_fast-food.svg";
 import kids from "../assets/icons/ic_kids.svg";
 import soup from "../assets/icons/ic_soup.svg";
+import { MenuItem } from "../interfaces/menu";
 
-export const menuItems = [
+export const menuItems: MenuItem[] = [
   {
+    id: 0,
     title: "Home",
     titleMobile: "Home",
     active: true,
@@ -17,6 +19,7 @@ export const menuItems = [
     cName: "navbar-link-mobile",
   },
   {
+    id: 1,
     title: "Vegetarianos",
     titleMobile: "Vegetarianos",
     active: false,
@@ -26,6 +29,7 @@ export const menuItems = [
     cName: "navbar-link",
   },
   {
+    id: 2,
     title: "Platos principales",
     titleMobile: "principales",
     active: false,
@@ -35,6 +39,7 @@ export const menuItems = [
     cName: "navbar-link",
   },
   {
+    id: 3,
     title: "Tortas",
     titleMobile: "Tortas",
     active: false,
@@ -44,6 +49,7 @@ export const menuItems = [
     cName: "navbar-link",
   },
   {
+    id: 4,
     title: "Comida Rápida",
     titleMobile: "Rápida",
     active: false,
@@ -53,6 +59,7 @@ export const menuItems = [
     cName: "navbar-link",
   },
   {
+    id: 5,
     title: "Menú Niños",
     titleMobile: "Menú Niños",
     active: false,
@@ -62,6 +69,7 @@ export const menuItems = [
     cName: "navbar-link",
   },
   {
+    id: 6,
     title: "Sopas",
     titleMobile: "Sopas",
     active: false,
