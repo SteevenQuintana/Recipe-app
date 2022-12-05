@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, Route, Routes } from "react-router-dom";
-import { Recipes } from "../../container";
+import { Link } from "react-router-dom";
 import { menuItems } from "../../helpers/menuItems";
 import { Banner, Logo } from "../../components";
 import { setQuery } from "../../features/recipeSlice";
@@ -34,9 +33,7 @@ const Navbar: React.FC = () => {
             ))}
           </div>
         </div>
-
         <Banner />
-
         <div className={"navbar__menu-mobile"}>
           {menuItems.map((item, index) => (
             <Link
@@ -51,16 +48,6 @@ const Navbar: React.FC = () => {
           ))}
         </div>
       </nav>
-
-      <Routes>
-        <Route path="/" element={<Recipes />} />
-        <Route path="/vegetarianos" element={<Recipes />} />
-        <Route path="/platos-principales" element={<Recipes />} />
-        <Route path="/Tortas" element={<Recipes />} />
-        <Route path="/comida-rapida" element={<Recipes />} />
-        <Route path="/menu-ninos" element={<Recipes />} />
-        <Route path="/sopas" element={<Recipes />} />
-      </Routes>
     </>
   );
 };

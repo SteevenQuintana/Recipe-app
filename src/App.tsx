@@ -4,7 +4,6 @@ function App() {
   return (
     <>
       <Header />
-      <div style={{ height: "10vh" }}></div>
       <Footer />
     </>
   );

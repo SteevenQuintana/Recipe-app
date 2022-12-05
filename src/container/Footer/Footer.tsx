@@ -1,5 +1,5 @@
 import "./Footer.scss";
-import productsImg from "../../assets/productImg.png";
+import productsImg from "../../assets/images/productImg.png";
 
 const Footer: React.FC = () => {
   return (
