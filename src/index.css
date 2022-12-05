@@ -44,3 +44,7 @@ code {
 .text-monster {
   font-family: MonsterClubhouse;
 }
+
+.app {
+  overflow: hidden;
+}

@@ -17,9 +17,7 @@ const Navbar: React.FC = () => {
     <>
       <nav className="navbar">
         <div className="navbar__container">
-          <Link className="navbar__logo" to="/">
-            <Logo />
-          </Link>
+          <Logo />
           <div className={"navbar__menu-desktop"}>
             {menuItems.map((item, index) => (
               <Link

@@ -12,20 +12,27 @@ import dificulty from "../../assets/icons/chef.svg";
 import "./Recipes.scss";
 
 function Recipes() {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const recipe = useAppSelector((state) => state.recipe.value);
+  // const [recipes, setRecipes] = useState<Recipe[]>([]);
+  // const recipe = useAppSelector((state) => state.recipe.value);
 
-  useEffect(() => {
-    (async () => {
-      setRecipes(await getRecipes(recipe));
-    })();
-  }, [recipe]);
+  // useEffect(() => {
+  //   (async () => {
+  //     setRecipes(await getRecipes(recipe));
+  //   })();
+  // }, [recipe]);
+
+  const recipes = [
+    { id: "1", image: ojingeo, title: "nuevo plato", servings: "10" },
+    { id: "2", image: ojingeo, title: "nuevo plato", servings: "10" },
+    { id: "3", image: ojingeo, title: "nuevo plato", servings: "10" },
+    { id: "4", image: ojingeo, title: "nuevo plato", servings: "10" },
+  ];
 
   return (
     <div className="recipe">
       <h2 className="recipe__title text-monster">Nuevas Recetas</h2>
       <ul className="recipe__list">
-        {recipes.map((recipe: Recipe) => (
+        {recipes.map((recipe: any) => (
           <li key={recipe.id}>
             <div className="item-container">
               <div className="item-image">

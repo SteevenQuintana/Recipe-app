@@ -1,11 +1,10 @@
-import { Footer, Header } from "./container";
+import RecipeApp from "./pages/RecipeApp";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Footer />
-    </>
+    <div className="app">
+      <RecipeApp />
+    </div>
   );
 }
 
